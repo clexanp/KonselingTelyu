@@ -13,7 +13,7 @@ const Welcome = ({navigation}) => {
         source={require('../../assets/illustration/Welcome.png')}
       />
       <View>
-        <Button onPress={() => navigation.navigate('Login')} />
+        <Button onPress={() => navigation.replace('Login')} />
       </View>
     </View>
   );
