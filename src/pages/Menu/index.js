@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, ScrollView} from 'react-native';
 import {
   HomeProfile,
   NewsItem,
@@ -7,20 +7,25 @@ import {
 } from '../../components/molecules';
 import {colors} from '../../utils';
 import {fonts} from '../../utils';
+import {Gap} from '../../components/atoms';
 
 const Menu = () => {
   return (
     <View style={styles.page}>
       <View style={styles.content}>
-        <HomeProfile />
-        <Text style={styles.section1}>Top Rated Conselors</Text>
-        <RatedConselors />
-        <RatedConselors />
-        <RatedConselors />
-        <Text style={styles.welcome}>Berita Seputar Konsultasi</Text>
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Gap height={30} />
+          <HomeProfile />
+          <Text style={styles.section1}>Top Rated Conselors</Text>
+          <RatedConselors />
+          <RatedConselors />
+          <RatedConselors />
+          <Text style={styles.section2}>Berita Seputar Konsultasi</Text>
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <Gap height={30} />
+        </ScrollView>
       </View>
     </View>
   );
@@ -36,12 +41,11 @@ const styles = StyleSheet.create({
   content: {
     backgroundColor: colors.white,
     flex: 1,
-    paddingVertical: 30,
     paddingHorizontal: 16,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
-  welcome: {
+  section2: {
     fontSize: 16,
     fontFamily: fonts.primary[600],
     color: colors.text.primary,

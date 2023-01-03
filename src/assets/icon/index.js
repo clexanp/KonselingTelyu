@@ -8,6 +8,7 @@ import CounselingActive from './counseling_active.svg';
 import CounselingInactive from './counseling_inactive.svg';
 import PostActive from './post_active.svg';
 import PostInactive from './post_inactive.svg';
+import IconStar from './star_rate_18px.svg';
 
 export {
   IconBackLight,
@@ -20,4 +21,5 @@ export {
   CounselingInactive,
   PostActive,
   PostInactive,
+  IconStar,
 };

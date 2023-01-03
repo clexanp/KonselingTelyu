@@ -18,10 +18,18 @@ const Tab = createBottomTabNavigator();
 const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
-      <Tab.Screen name="Menu" component={Menu} />
-      <Tab.Screen name="Explore" component={Explore} />
-      <Tab.Screen name="Counseling" component={Counseling} />
-      <Tab.Screen name="Post" component={Post} />
+      <Tab.Screen name="Menu" component={Menu} options={{headerShown: false}} />
+      <Tab.Screen
+        name="Explore"
+        component={Explore}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Counseling"
+        component={Counseling}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen name="Post" component={Post} options={{headerShown: false}} />
     </Tab.Navigator>
   );
 };
