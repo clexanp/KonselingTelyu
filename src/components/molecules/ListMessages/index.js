@@ -1,16 +1,15 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
-import {DummyNews2} from '../../../assets/dummy';
 import {colors} from '../../../utils/colors';
 import {fonts} from '../../../utils/fonts';
 
-const ListMessages = () => {
+const ListMessages = ({profile, name, desc}) => {
   return (
     <View style={styles.container}>
-      <Image source={DummyNews2} style={styles.avatar} />
+      <Image source={profile} style={styles.avatar} />
       <View>
-        <Text style={styles.name1}>Narumi</Text>
-        <Text style={styles.name2}>Terimakasih ibu atas waktunya</Text>
+        <Text style={styles.name1}>{name}</Text>
+        <Text style={styles.name2}>{desc}</Text>
       </View>
     </View>
   );

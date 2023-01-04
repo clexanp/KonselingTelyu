@@ -4,18 +4,19 @@ import {ILArtikel4} from '../../assets/illustration';
 import {fonts} from '../../utils/fonts';
 import {colors} from '../../utils/colors';
 import {ListExplore} from '../../components/molecules';
+import {DummyEvent1, DummyEvent2, DummyEvent3} from '../../assets/dummy';
 
 const Explore = () => {
   return (
     <View style={styles.page}>
       <ImageBackground source={ILArtikel4} style={styles.background}>
-        <Text style={styles.title1}>Counseling Articles</Text>
+        <Text style={styles.title1}>Counseling Events</Text>
         <Text style={styles.title2}>3 Available</Text>
       </ImageBackground>
       <View style={styles.content}>
-        <ListExplore />
-        <ListExplore />
-        <ListExplore />
+        <ListExplore name="Event Counseling A" time="today" pic={DummyEvent1} />
+        <ListExplore name="Event Counseling B" time="today" pic={DummyEvent2} />
+        <ListExplore name="Event Counseling C" time="today" pic={DummyEvent3} />
       </View>
     </View>
   );

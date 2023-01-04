@@ -1,16 +1,15 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
-import {DummyArtikel1} from '../../../assets/dummy';
 import {colors} from '../../../utils/colors';
 import {fonts} from '../../../utils/fonts';
 
-const ListExplore = () => {
+const ListExplore = ({name, time, pic}) => {
   return (
     <View style={styles.container}>
-      <Image source={DummyArtikel1} style={styles.picture} />
+      <Image source={pic} style={styles.picture} />
       <View>
-        <Text style={styles.title1}>Apa itu skizofernia?</Text>
-        <Text style={styles.title2}>Today</Text>
+        <Text style={styles.title1}>{name}</Text>
+        <Text style={styles.title2}>{time}</Text>
       </View>
     </View>
   );
