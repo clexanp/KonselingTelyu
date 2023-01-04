@@ -20,7 +20,7 @@ const Menu = () => {
           <RatedConselors />
           <RatedConselors />
           <RatedConselors />
-          <Text style={styles.section2}>Berita Seputar Konsultasi</Text>
+          <Text style={styles.section2}>News About Counseling</Text>
           <NewsItem />
           <NewsItem />
           <NewsItem />
@@ -46,14 +46,14 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
   },
   section2: {
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: fonts.primary[600],
     color: colors.text.primary,
     marginTop: 30,
     marginBottom: 16,
   },
   section1: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: fonts.primary[600],
     color: colors.text.primary,
     marginTop: 30,

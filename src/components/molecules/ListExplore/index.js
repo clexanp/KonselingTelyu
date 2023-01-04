@@ -1,45 +1,40 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
-import {DummyNews} from '../../../assets/dummy';
-import {fonts} from '../../../utils/fonts';
+import {DummyArtikel1} from '../../../assets/dummy';
 import {colors} from '../../../utils/colors';
+import {fonts} from '../../../utils/fonts';
 
-const NewsItem = () => {
+const ListExplore = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.titleWrapper}>
-        <Text style={styles.title1}>
-          Cerita pengalaman Andi tentang skizofernia
-        </Text>
+      <Image source={DummyArtikel1} style={styles.picture} />
+      <View>
+        <Text style={styles.title1}>Apa itu skizofernia?</Text>
         <Text style={styles.title2}>Today</Text>
       </View>
-      <Image source={DummyNews} styles={styles.image} />
     </View>
   );
 };
 
-export default NewsItem;
+export default ListExplore;
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+    padding: 16,
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
-    paddingBottom: 12,
-    paddingTop: 16,
   },
-  titleWrapper: {flex: 1},
+  picture: {width: 80, height: 60, borderRadius: 11, marginRight: 16},
   title1: {
     fontSize: 16,
     fontFamily: fonts.primary[600],
     color: colors.text.primary,
-    maxWidth: '90%',
   },
   title2: {
     fontSize: 12,
     fontFamily: fonts.primary[400],
     color: colors.text.secondary,
-    marginTop: 4,
+    marginTop: 6,
   },
-  image: {width: 80, height: 60, borderRadius: 11},
 });
