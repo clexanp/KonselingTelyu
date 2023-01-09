@@ -5,5 +5,17 @@ import Menu from './Menu';
 import Explore from './Explore';
 import Counseling from './Counseling';
 import Post from './Post';
+import ProfileCounselors from './ProfileCounselors';
+import Chatting from './Chatting';
 
-export {Splash, Welcome, Login, Menu, Explore, Counseling, Post};
+export {
+  Splash,
+  Welcome,
+  Login,
+  Menu,
+  Explore,
+  Counseling,
+  Post,
+  Chatting,
+  ProfileCounselors,
+};

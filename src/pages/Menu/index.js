@@ -3,23 +3,25 @@ import {StyleSheet, View, Text, ScrollView} from 'react-native';
 import {
   HomeProfile,
   NewsItem,
-  RatedConselors,
+  ChooseCounselors,
 } from '../../components/molecules';
 import {colors} from '../../utils';
 import {fonts} from '../../utils';
 import {Gap} from '../../components/atoms';
 
-const Menu = () => {
+const Menu = ({navigation}) => {
   return (
     <View style={styles.page}>
       <View style={styles.content}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Gap height={30} />
           <HomeProfile />
-          <Text style={styles.section1}>Top Rated Conselors</Text>
-          <RatedConselors />
-          <RatedConselors />
-          <RatedConselors />
+          <Text style={styles.section1}>Choose Counselors</Text>
+          <ChooseCounselors
+            onPress={() => navigation.navigate('ProfileCounselors')}
+          />
+          <ChooseCounselors />
+          <ChooseCounselors />
           <Text style={styles.section2}>News About Counseling</Text>
           <NewsItem />
           <NewsItem />

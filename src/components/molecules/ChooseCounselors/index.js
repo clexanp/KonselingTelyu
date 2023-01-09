@@ -1,13 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import {DummyUser} from '../../../assets/dummy';
 import {IconStar} from '../../../assets/icon';
 import {fonts} from '../../../utils/fonts';
 import {colors} from '../../../utils/colors';
 
-const RatedConselors = () => {
+const ChooseCounselors = ({onPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={DummyUser} style={styles.avatar} />
       <View style={styles.profile}>
         <Text style={styles.name}>Alex</Text>
@@ -20,11 +20,11 @@ const RatedConselors = () => {
         <IconStar />
         <IconStar />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
-export default RatedConselors;
+export default ChooseCounselors;
 
 const styles = StyleSheet.create({
   container: {
