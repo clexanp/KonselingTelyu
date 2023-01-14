@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Header} from '../../components';
 
 const ProfileCounselors = ({navigation}) => {
   return (
     <View>
-      <Header title="ProfileCounselors" onPress={() => navigation.goBack()} />
+      <Header title="Profile Counselors" onPress={() => navigation.goBack()} />
     </View>
   );
 };
