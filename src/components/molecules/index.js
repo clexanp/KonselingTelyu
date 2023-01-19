@@ -5,6 +5,9 @@ import NewsItem from './NewsItem';
 import ChooseCounselors from './ChooseCounselors';
 import ListMessages from './ListMessages';
 import ListExplore from './ListExplore';
+import ChatItem from './ChatItem';
+import InputChat from './InputChat';
+import Profile from './Profile';
 
 export {
   Header,
@@ -14,4 +17,7 @@ export {
   ChooseCounselors,
   ListMessages,
   ListExplore,
+  ChatItem,
+  InputChat,
+  Profile,
 };

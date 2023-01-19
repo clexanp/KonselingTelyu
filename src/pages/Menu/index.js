@@ -15,7 +15,7 @@ const Menu = ({navigation}) => {
       <View style={styles.content}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Gap height={30} />
-          <HomeProfile />
+          <HomeProfile onPress={() => navigation.navigate('UserProfile')} />
           <Text style={styles.section1}>Choose Counselors</Text>
           <ChooseCounselors
             onPress={() => navigation.navigate('ProfileCounselors')}
