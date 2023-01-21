@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {IconBackLight, IconSendDark} from '../../../assets/icon';
 import {colors} from '../../../utils/colors';
 

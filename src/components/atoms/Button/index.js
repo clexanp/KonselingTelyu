@@ -5,7 +5,7 @@ import {fonts} from '../../../utils/fonts';
 import IconOnly from './IconOnly';
 import BtnIconSend from './BtnIconSend';
 
-const Button = ({onPress, type, icon, disable}) => {
+const Button = ({onPress, type, icon, disable, text}) => {
   if (type === 'btn-icon-send') {
     return <BtnIconSend disable={disable} />;
   }
@@ -14,7 +14,7 @@ const Button = ({onPress, type, icon, disable}) => {
   }
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>Login</Text>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -24,10 +24,8 @@ export default Button;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.button.primary.background,
-    paddingHorizontal: 100,
-    paddingVertical: 15,
+    paddingVertical: 10,
     borderRadius: 10,
-    marginBottom: 50,
   },
   text: {
     fontSize: 18,

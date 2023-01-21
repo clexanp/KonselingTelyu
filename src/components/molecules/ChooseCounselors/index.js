@@ -1,17 +1,16 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
-import {DummyUser} from '../../../assets/dummy';
 import {IconStar} from '../../../assets/icon';
 import {fonts} from '../../../utils/fonts';
 import {colors} from '../../../utils/colors';
 
-const ChooseCounselors = ({onPress}) => {
+const ChooseCounselors = ({name, desc, avatar, onPress}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image source={DummyUser} style={styles.avatar} />
+      <Image source={avatar} style={styles.avatar} />
       <View style={styles.profile}>
-        <Text style={styles.name}>Alex</Text>
-        <Text style={styles.category}>Konselor Pria</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.category}>{desc}</Text>
       </View>
       <View style={styles.rate}>
         <IconStar />
@@ -31,6 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingBottom: 16,
+    alignItems: 'center',
   },
   avatar: {width: 50, height: 50, borderRadius: 50 / 2, marginRight: 12},
   rate: {flexDirection: 'row'},

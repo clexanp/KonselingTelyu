@@ -15,7 +15,7 @@ const Login = ({navigation}) => {
       <Input label="Password" />
       <Gap height={10} />
       <Link />
-      <Button title="Login" onPress={() => navigation.navigate('MainApp')} />
+      <Button text="Login" onPress={() => navigation.navigate('MainApp')} />
     </View>
   );
 };

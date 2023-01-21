@@ -7,7 +7,7 @@ import {fonts} from '../../utils/fonts';
 const Splash = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('Welcome');
+      navigation.replace('Login');
     }, 3000);
   }, [navigation]);
   return (

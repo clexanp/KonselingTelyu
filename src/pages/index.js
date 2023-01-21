@@ -1,5 +1,4 @@
 import Splash from './Splash';
-import Welcome from './Welcome';
 import Login from './Login';
 import Menu from './Menu';
 import Explore from './Explore';
@@ -11,7 +10,6 @@ import UserProfile from './UserProfile';
 
 export {
   Splash,
-  Welcome,
   Login,
   Menu,
   Explore,

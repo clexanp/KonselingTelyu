@@ -8,6 +8,11 @@ import {
 import {colors} from '../../utils';
 import {fonts} from '../../utils';
 import {Gap} from '../../components/atoms';
+import {
+  DummyKonselor1,
+  DummyKonselor2,
+  DummyKonselor3,
+} from '../../assets/dummy';
 
 const Menu = ({navigation}) => {
   return (
@@ -16,13 +21,28 @@ const Menu = ({navigation}) => {
         <ScrollView showsVerticalScrollIndicator={false}>
           <Gap height={30} />
           <HomeProfile onPress={() => navigation.navigate('UserProfile')} />
-          <Text style={styles.section1}>Choose Counselors</Text>
-          <ChooseCounselors
-            onPress={() => navigation.navigate('ProfileCounselors')}
-          />
-          <ChooseCounselors />
-          <ChooseCounselors />
-          <Text style={styles.section2}>News About Counseling</Text>
+          <View>
+            <Text style={styles.section1}>Choose Counselors</Text>
+            <ChooseCounselors
+              name="Narumi Chandra"
+              desc="Konselor Wanita"
+              avatar={DummyKonselor1}
+              onPress={() => navigation.navigate('ProfileCounselors')}
+            />
+            <ChooseCounselors
+              name="Arman Bagus"
+              desc="Konselor Pria"
+              avatar={DummyKonselor2}
+              onPress={() => navigation.navigate('ProfileCounselors')}
+            />
+            <ChooseCounselors
+              name="Kimberly Susan"
+              desc="Konselor Wanita"
+              avatar={DummyKonselor3}
+              onPress={() => navigation.navigate('ProfileCounselors')}
+            />
+            <Text style={styles.section2}>News About Counseling</Text>
+          </View>
           <NewsItem />
           <NewsItem />
           <NewsItem />
