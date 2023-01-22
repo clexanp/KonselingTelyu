@@ -11,7 +11,7 @@ const Other = () => {
       <View>
         <View style={styles.chatContent}>
           <Text style={styles.text}>
-            Izin bertanya, cara mengatasibeban pikiran, gimana ya?
+            Izin bertanya, cara mengatasi beban pikiran, gimana ya?
           </Text>
         </View>
         <Text style={styles.date}>9.35 AM</Text>

@@ -8,7 +8,7 @@ import {fonts} from '../../../utils/fonts';
 const DarkProfile = ({onPress}) => {
   return (
     <View style={styles.container}>
-      <Button type="icon-only" icon="back-dark" onPress={onPress} />
+      <Button type="icon-only" icon="back-light" onPress={onPress} />
       <View style={styles.content}>
         <Text style={styles.name}>Chelsea Narumi</Text>
         <Text style={styles.desc}>Konselor Wanita</Text>

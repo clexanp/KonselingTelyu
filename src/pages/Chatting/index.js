@@ -8,7 +8,7 @@ const Chatting = ({navigation}) => {
   return (
     <View style={styles.page}>
       <Header
-        type="dark-profile"
+        type="dark"
         title="Chelsea Narumi"
         onPress={() => navigation.goBack()}
       />
