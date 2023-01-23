@@ -21,7 +21,7 @@ const Login = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Gap height={40} />
         <ILLogo style={styles.title2} />
-        <Text style={styles.title}>Silahkan Buat Akun Barumu!</Text>
+        <Text style={styles.title}>Sign In With Your Account</Text>
         <Input
           label="Email"
           value={form.email}
@@ -39,7 +39,12 @@ const Login = ({navigation}) => {
         <Gap height={40} />
         <Button text="Sign In" onPress={onLogin} />
         <Gap height={30} />
-        <Link title="Create New Account" size={16} align="center" />
+        <Link
+          title="Create New Account"
+          size={16}
+          align="center"
+          onPress={() => navigation.navigate('Register')}
+        />
       </ScrollView>
     </View>
   );

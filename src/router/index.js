@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {
   Splash,
   WelcomeScreen,
+  Register,
   Login,
   Menu,
   Explore,
@@ -48,6 +49,11 @@ const Router = () => {
       <Stack.Screen
         name="WelcomeScreen"
         component={WelcomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Register"
+        component={Register}
         options={{headerShown: false}}
       />
       <Stack.Screen

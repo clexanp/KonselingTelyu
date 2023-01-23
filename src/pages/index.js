@@ -8,6 +8,8 @@ import ProfileCounselors from './ProfileCounselors';
 import Chatting from './Chatting';
 import UserProfile from './UserProfile';
 import WelcomeScreen from './WelcomeScreen';
+import Register from './Register';
+
 export {
   Splash,
   Login,
@@ -19,4 +21,5 @@ export {
   ProfileCounselors,
   UserProfile,
   WelcomeScreen,
+  Register,
 };

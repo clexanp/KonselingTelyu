@@ -15,12 +15,15 @@ const WelcomeScreen = ({navigation}) => {
         </Text>
       </View>
       <View>
-        <Button text="Get Started" />
+        <Button
+          text="Get Started"
+          onPress={() => navigation.navigate('Register')}
+        />
         <Gap height={16} />
         <Button
           type="secondary"
           text="Sign In"
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => navigation.replace('Login')}
         />
       </View>
     </ImageBackground>
