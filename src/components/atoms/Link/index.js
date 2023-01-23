@@ -1,12 +1,24 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+import {colors} from '../../../utils/colors';
+import {fonts} from '../../../utils/fonts';
 
-const Link = () => {
+const Link = ({title, size, align}) => {
   return (
     <View>
-      <Text>Halaman Link</Text>
+      <Text style={styles.text(size, align)}>{title}</Text>
     </View>
   );
 };
 
 export default Link;
+
+const styles = StyleSheet.create({
+  text: (size, align) => ({
+    fontSize: size,
+    color: colors.text.secondary,
+    fontFamily: fonts.primary[400],
+    textDecorationLine: 'underline',
+    textAlign: align,
+  }),
+});

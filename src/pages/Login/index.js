@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, View, Text, ScrollView} from 'react-native';
 import {ILLogo} from '../../assets';
 import {Button, Input, Link, Gap} from '../../components';
@@ -19,10 +19,9 @@ const Login = ({navigation}) => {
   return (
     <View style={styles.page}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        <Gap height={40} />
         <ILLogo style={styles.title2} />
-        <Text style={styles.title}>
-          Silahkan login dengan akun SSO kamu ya!
-        </Text>
+        <Text style={styles.title}>Silahkan Buat Akun Barumu!</Text>
         <Input
           label="Email"
           value={form.email}
@@ -36,8 +35,11 @@ const Login = ({navigation}) => {
           secureTextEntry
         />
         <Gap height={10} />
-        <Link />
-        <Button text="Login" onPress={onLogin} />
+        <Link title="Forgot My Password" size={12} />
+        <Gap height={40} />
+        <Button text="Sign In" onPress={onLogin} />
+        <Gap height={30} />
+        <Link title="Create New Account" size={16} align="center" />
       </ScrollView>
     </View>
   );
@@ -47,7 +49,7 @@ export default Login;
 
 const styles = StyleSheet.create({
   page: {
-    padding: 40,
+    paddingHorizontal: 40,
     backgroundColor: colors.white,
     flex: 1,
   },
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     color: colors.text.primary,
     marginTop: 40,
     marginBottom: 40,
-    maxWidth: 200,
+    maxWidth: 153,
   },
   title2: {
     marginHorizontal: -22,

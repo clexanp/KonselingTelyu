@@ -13,8 +13,8 @@ const Button = ({onPress, type, icon, disable, text}) => {
     return <IconOnly icon={icon} onPress={onPress} />;
   }
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
+    <TouchableOpacity style={styles.container(type)} onPress={onPress}>
+      <Text style={styles.text(type)}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -22,15 +22,16 @@ const Button = ({onPress, type, icon, disable, text}) => {
 export default Button;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.button.primary.background,
+  container: type => ({
+    backgroundColor:
+      type === 'secondary' ? 'white' : colors.button.primary.background,
     paddingVertical: 10,
     borderRadius: 10,
-  },
-  text: {
+  }),
+  text: type => ({
     fontSize: 18,
     fontFamily: fonts.primary[600],
     textAlign: 'center',
-    color: colors.button.primary.text,
-  },
+    color: type === 'secondary' ? colors.secondary : 'white',
+  }),
 });

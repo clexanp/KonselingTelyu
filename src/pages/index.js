@@ -7,7 +7,7 @@ import Post from './Post';
 import ProfileCounselors from './ProfileCounselors';
 import Chatting from './Chatting';
 import UserProfile from './UserProfile';
-
+import WelcomeScreen from './WelcomeScreen';
 export {
   Splash,
   Login,
@@ -18,4 +18,5 @@ export {
   Chatting,
   ProfileCounselors,
   UserProfile,
+  WelcomeScreen,
 };
