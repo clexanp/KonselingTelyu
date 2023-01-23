@@ -9,7 +9,8 @@ const InputChat = () => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Tulis Pesan Untuk Chelsea Narumi"
+        placeholder="Write your Message"
+        placeholderTextColor="grey"
       />
       <Button type="btn-icon-send" />
     </View>
@@ -20,6 +21,7 @@ export default InputChat;
 
 const styles = StyleSheet.create({
   input: {
+    color: 'black',
     backgroundColor: colors.disable,
     padding: 14,
     borderRadius: 10,

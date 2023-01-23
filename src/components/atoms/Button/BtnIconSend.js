@@ -1,13 +1,13 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {IconBackLight, IconSendDark} from '../../../assets/icon';
+import {IconSendLight, IconSendDark} from '../../../assets/icon';
 import {colors} from '../../../utils/colors';
 
 const BtnIconSend = ({disable}) => {
   return (
     <View style={styles.container(disable)}>
       {disable && <IconSendDark />}
-      {!disable && <IconBackLight />}
+      {!disable && <IconSendLight />}
     </View>
   );
 };

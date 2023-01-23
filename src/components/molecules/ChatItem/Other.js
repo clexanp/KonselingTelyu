@@ -2,12 +2,12 @@ import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import {fonts} from '../../../utils/fonts';
 import {colors} from '../../../utils/colors';
-import {DummyUser2} from '../../../assets/dummy';
+import {DummyKonselor1} from '../../../assets/dummy';
 
 const Other = () => {
   return (
     <View style={styles.container}>
-      <Image source={DummyUser2} style={styles.avatar} />
+      <Image source={DummyKonselor1} style={styles.avatar} />
       <View>
         <View style={styles.chatContent}>
           <Text style={styles.text}>
