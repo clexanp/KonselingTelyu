@@ -3,6 +3,8 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {Button, Gap, Header, Input} from '../../components';
 import {colors} from '../../utils/colors';
 import {useForm} from '../../utils/useForm';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {Fire} from '../../config';
 
 const Register = ({navigation}) => {
   const [form, setForm] = useForm({
@@ -14,6 +16,14 @@ const Register = ({navigation}) => {
 
   const onRegister = () => {
     console.log(form);
+    createUserWithEmailAndPassword(Fire, form.email, form.password)
+      .then(success => {
+        console.log('register success: ', success);
+      })
+      .catch(error => {
+        const errorMessage = error.message;
+        console.log('error register: ', errorMessage);
+      });
     //() => navigation.navigate('MainApp')
   };
   return (

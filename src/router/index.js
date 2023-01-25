@@ -8,7 +8,6 @@ import {
   Menu,
   Explore,
   Counseling,
-  Post,
   ProfileCounselors,
   Chatting,
   UserProfile,
@@ -33,7 +32,6 @@ const MainApp = () => {
         component={Counseling}
         options={{headerShown: false}}
       />
-      <Tab.Screen name="Post" component={Post} options={{headerShown: false}} />
     </Tab.Navigator>
   );
 };
