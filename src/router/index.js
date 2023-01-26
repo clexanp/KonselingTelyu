@@ -5,6 +5,7 @@ import {
   WelcomeScreen,
   Register,
   Login,
+  UploadPhoto,
   Menu,
   Explore,
   Counseling,
@@ -38,7 +39,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash">
+    <Stack.Navigator initialRouteName="UploadPhoto">
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -57,6 +58,11 @@ const Router = () => {
       <Stack.Screen
         name="Login"
         component={Login}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UploadPhoto"
+        component={UploadPhoto}
         options={{headerShown: false}}
       />
       <Stack.Screen

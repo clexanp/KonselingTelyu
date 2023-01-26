@@ -8,6 +8,7 @@ import Chatting from './Chatting';
 import UserProfile from './UserProfile';
 import WelcomeScreen from './WelcomeScreen';
 import Register from './Register';
+import UploadPhoto from './UploadPhoto';
 
 export {
   Splash,
@@ -20,4 +21,5 @@ export {
   UserProfile,
   WelcomeScreen,
   Register,
+  UploadPhoto,
 };

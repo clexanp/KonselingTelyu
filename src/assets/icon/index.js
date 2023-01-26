@@ -11,6 +11,8 @@ import PostInactive from './post_inactive.svg';
 import IconStar from './star_rate_18px.svg';
 import IconSendDark from './ic_send_dark.svg';
 import IconSendLight from './ic_send_light.svg';
+import IconPhotoAdd from './add_photo.svg';
+import IconPhotoRemove from './remove_photo.svg';
 
 export {
   IconBackLight,
@@ -26,4 +28,6 @@ export {
   IconStar,
   IconSendDark,
   IconSendLight,
+  IconPhotoAdd,
+  IconPhotoRemove,
 };
