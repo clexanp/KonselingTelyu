@@ -1,29 +1,52 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Button, Gap, Header, Link} from '../../components';
 import {ILPhotoNull} from '../../assets/illustration';
 import {IconPhotoAdd, IconPhotoRemove} from '../../assets/icon';
 import {colors} from '../../utils/colors';
 import {fonts} from '../../utils/fonts';
+import {launchImageLibrary} from 'react-native-image-picker';
+import {showMessage} from 'react-native-flash-message';
 
 const UploadPhoto = ({navigation}) => {
   const [hasPhoto, setHasPhoto] = useState(false);
+  const [photo, setPhoto] = useState(ILPhotoNull);
+  const getImage = () => {
+    launchImageLibrary(
+      {quality: 0.5, maxWidth: 200, maxHeight: 200, includeBase64: true},
+      response => {
+        console.log('response: ', response);
+        if (response.didCancel || response.error) {
+          showMessage({
+            message: 'Kamu enggak jadi pilih fotonya?',
+            type: 'default',
+            backgroundColor: colors.button.secondary.background,
+            color: colors.white,
+          });
+        } else {
+          const source = {uri: response.assets[0].uri};
+          setPhoto(source);
+          setHasPhoto(true);
+        }
+      },
+    );
+  };
   return (
     <View style={styles.page}>
       <Header title="Upload Photo" />
       <View style={styles.content}>
         <View style={styles.profile}>
-          <View style={styles.avatarWrapper}>
-            <Image source={ILPhotoNull} style={styles.avatar} />
+          <TouchableOpacity style={styles.avatarWrapper} onPress={getImage}>
+            <Image source={photo} style={styles.avatar} key={photo.uri} />
             {hasPhoto && <IconPhotoRemove style={styles.photoAdd} />}
             {!hasPhoto && <IconPhotoAdd style={styles.photoAdd} />}
-          </View>
+          </TouchableOpacity>
           <Text style={styles.name}>Chelsea Narumi</Text>
           <Text style={styles.profession}>Konselor Wanita</Text>
         </View>
         <View>
           <Button
-            disable
+            disable={!hasPhoto}
             text="Upload"
             onPress={() => navigation.replace('MainApp')}
           />
@@ -51,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   profile: {alignItems: 'center', flex: 1, justifyContent: 'center'},
-  avatar: {width: 110, height: 110},
+  avatar: {width: 110, height: 110, borderRadius: 110 / 2},
   avatarWrapper: {
     width: 130,
     height: 130,
