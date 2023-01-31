@@ -7,6 +7,7 @@ import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {Fire} from '../../config';
 import {showMessage} from 'react-native-flash-message';
 import {getDatabase, ref, set} from 'firebase/database';
+import {storeData} from '../../utils/localstorage';
 
 const Register = ({navigation}) => {
   const [form, setForm] = useForm({
@@ -17,12 +18,12 @@ const Register = ({navigation}) => {
   });
 
   const [loading, setLoading] = useState(false);
-
   const onRegister = () => {
     console.log(form);
     setLoading(true);
     createUserWithEmailAndPassword(Fire, form.email, form.password)
       .then(success => {
+        console.log(success);
         setLoading(false);
         setForm('reset');
         const db = getDatabase();
@@ -30,6 +31,14 @@ const Register = ({navigation}) => {
           fullName: form.fullName,
           major: form.major,
           email: form.email,
+          uid: success.user.uid,
+        });
+        storeData('user', db);
+        navigation.navigate('UploadPhoto', {
+          fullName: form.fullName,
+          major: form.major,
+          email: form.email,
+          uid: success.user.uid,
         });
         console.log('register success: ', success);
       })
@@ -44,7 +53,6 @@ const Register = ({navigation}) => {
         });
         console.log('error: ', error);
       });
-    //() => navigation.navigate('MainApp')
   };
   return (
     <>

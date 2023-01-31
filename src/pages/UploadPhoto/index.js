@@ -7,13 +7,24 @@ import {colors} from '../../utils/colors';
 import {fonts} from '../../utils/fonts';
 import {launchImageLibrary} from 'react-native-image-picker';
 import {showMessage} from 'react-native-flash-message';
+import {getDatabase, ref, update} from 'firebase/database';
+import {storeData} from '../../utils/localstorage';
 
-const UploadPhoto = ({navigation}) => {
+const UploadPhoto = ({navigation, route}) => {
+  const data = route.params;
+  console.log(data);
+  const [photoForDB, setPhotoForDB] = useState('');
   const [hasPhoto, setHasPhoto] = useState(false);
   const [photo, setPhoto] = useState(ILPhotoNull);
   const getImage = () => {
     launchImageLibrary(
-      {quality: 0.5, maxWidth: 200, maxHeight: 200, includeBase64: true},
+      {
+        quality: 0.5,
+        maxWidth: 200,
+        maxHeight: 200,
+        mediaType: 'photo',
+        includeBase64: true,
+      },
       response => {
         console.log('response: ', response);
         if (response.didCancel || response.error) {
@@ -24,12 +35,25 @@ const UploadPhoto = ({navigation}) => {
             color: colors.white,
           });
         } else {
+          console.log('response getImage: ', response);
           const source = {uri: response.assets[0].uri};
+          setPhotoForDB(
+            `data:${response.assets[0].type};base64, ${response.assets[0].base64}`,
+          );
           setPhoto(source);
           setHasPhoto(true);
         }
       },
     );
+  };
+  const uploadAndContinue = () => {
+    const db = getDatabase();
+    update(ref(db, 'users/' + data.uid + '/'), {photo: photoForDB});
+
+    console.log('stored data ', JSON.stringify(data));
+    data.photo = photoForDB;
+    storeData('user', data);
+    navigation.replace('MainApp');
   };
   return (
     <View style={styles.page}>
@@ -41,14 +65,14 @@ const UploadPhoto = ({navigation}) => {
             {hasPhoto && <IconPhotoRemove style={styles.photoAdd} />}
             {!hasPhoto && <IconPhotoAdd style={styles.photoAdd} />}
           </TouchableOpacity>
-          <Text style={styles.name}>Chelsea Narumi</Text>
-          <Text style={styles.profession}>Konselor Wanita</Text>
+          <Text style={styles.name}>{data.fullName}</Text>
+          <Text style={styles.profession}>{data.major}</Text>
         </View>
         <View>
           <Button
             disable={!hasPhoto}
             text="Upload"
-            onPress={() => navigation.replace('MainApp')}
+            onPress={uploadAndContinue}
           />
           <Gap height={30} />
           <Link
