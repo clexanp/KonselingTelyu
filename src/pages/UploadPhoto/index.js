@@ -57,7 +57,10 @@ const UploadPhoto = ({navigation, route}) => {
   };
   return (
     <View style={styles.page}>
-      <Header title="Upload Photo" />
+      <Header
+        onPress={() => navigation.navigate('Register')}
+        title="Upload Photo"
+      />
       <View style={styles.content}>
         <View style={styles.profile}>
           <TouchableOpacity style={styles.avatarWrapper} onPress={getImage}>
